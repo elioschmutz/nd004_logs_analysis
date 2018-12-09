@@ -23,7 +23,7 @@ class Printer(object):
         print('- {}'.format(text))
 
     def _print_line(self, sign="-", times=50):
-        print sign * times
+        print(sign * times)
 
     def _print_nl(self):
-        print '\n'
+        print('\n')
