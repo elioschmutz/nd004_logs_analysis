@@ -35,7 +35,7 @@ _DAYS_WITH_ERROR_RATIO = """
                error_requests_per_day=_ERROR_REQUESTS_PER_DAY)
 
 ERROR_DAYS = """
-    SELECT TO_CHAR(day, 'Mon DD, YYYY'), ratio
+    SELECT TO_CHAR(day, 'Mon DD, YYYY'), ROUND((ratio * 100)::NUMERIC, 2)
     FROM ({days_with_error_ratio}) as ratio_errors
     WHERE ratio > 0.01
     """.format(days_with_error_ratio=_DAYS_WITH_ERROR_RATIO)

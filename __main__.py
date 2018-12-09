@@ -23,5 +23,5 @@ analyser.add_question(
     Question('On which days did more than 1% of requests lead to errors?',
              queries.ERROR_DAYS,
              lambda result: '{}: {}% errors'.format(result[0],
-                                                    round(result[1]*100, 2))))
+                                                    result[1])))
 analyser.analyse()
